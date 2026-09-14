@@ -1,0 +1,18 @@
+---
+layout: base.html
+pagination:
+  data: collections.news
+  size: 1
+  alias: post
+permalink: "/news/{{ post.fileSlug }}/"
+---
+
+<article class="single-post">
+  <div class="container">
+    <h1>{{ post.data.title }}</h1>
+    <p class="meta">{{ post.data.date | dateDisplay }} | {{ post.data.category }}</p>
+    <div class="content">
+      {{ post.templateContent | safe }}
+    </div>
+  </div>
+</article>

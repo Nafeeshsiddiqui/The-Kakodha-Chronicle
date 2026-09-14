@@ -1,0 +1,23 @@
+---
+layout: base.html
+title: Blog
+permalink: /blog/index.html
+---
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Community Blog</h2>
+    <div class="blog-grid">
+      {% for post in collections.blog | reverse %}
+      <article class="blog-card">
+        <div class="blog-content">
+          <span class="author">By {{ post.data.author }}</span>
+          <span class="date">{{ post.data.date | dateDisplay }}</span>
+          <h3>{{ post.data.title }}</h3>
+          <a href="{{ post.url }}" class="read-more">Read More →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
